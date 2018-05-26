@@ -1,0 +1,12 @@
+graph TD
+start(Client) -->|request|varnish
+varnish-->cache{warm cache?}
+cache-->|Yes|start
+cache-->|No|fetch(fetch fresh content)
+fetch-->server{API server}
+server-->|200|fetch
+fetch-->|enrich cache|cache
+server-->|5xx|retry{retry}
+retry-->|failed|grace(grace)
+retry-->|success|cache
+grace-->|stale copy|start
