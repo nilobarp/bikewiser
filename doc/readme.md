@@ -6,7 +6,7 @@ An easy and effective way to cache HTTP response is to use a reverse proxy servi
 
 Instead of directly talking to a public API server we implement a layer in between the client and the public API with a reverse proxy.
 
-![reverse-proxy]("./images/basic-cache.png")
+![reverse-proxy](images/basic-cache.png)
 
 Varnish is a architecture-agnostic, cache anything type of proxy. It is easy to configure and has a robust feature set.
 
@@ -33,6 +33,6 @@ Hence a slight change in our proxy configurations will allow us to better handle
 
 The flow with varnish grace and retry will roughly look like so
 
-![varnish-flow]("./images/varnish-flow.png")
+![varnish-flow](images/varnish-flow.png)
 
 Apart from server side caching it is also very important to cache on client side. This could be as easy as setting correct cache control headers or utilizing client side storage for offline first experience.
