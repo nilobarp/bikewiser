@@ -22,12 +22,14 @@ export function DetailTable({ incidents, loadingState }) {
         {
           Header: "Title",
           accessor: "title",
-          sortable: false
+          sortable: false,
+          Cell: row => <span title={row.value}>{row.value}</span>
         },
         {
           Header: "Address",
           accessor: "address",
-          sortable: false
+          sortable: false,
+          Cell: row => <span title={row.value}>{row.value}</span>
         }
       ]
     }
